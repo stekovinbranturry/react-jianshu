@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# temp html file
+src/html/*.html
+
+# sass map file
+*.css.map
