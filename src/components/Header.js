@@ -10,6 +10,7 @@ export default class Header extends Component {
 			menuClassName: 'collapse navbar-collapse'
 		};
 	}
+
 	handleClickOnNavbarButton = () => {
 		this.setState(() => {
 			return this.state.isMenuShow
@@ -23,6 +24,7 @@ export default class Header extends Component {
 				  };
 		});
 	};
+
 	render() {
 		return (
 			<nav className="navbar navbar-default navbar-fixed-top">
@@ -31,7 +33,12 @@ export default class Header extends Component {
 						<img src={navLogo} alt="Nav logo" />
 					</a>
 
-					<a className="btn write-btn" target="_blank" href="/">
+					<a
+						className="btn write-btn"
+						target="_blank"
+						rel="noopener noreferrer"
+						href="/"
+					>
 						<i className="iconfont ic-write" />
 						写文章
 					</a>
@@ -84,7 +91,12 @@ export default class Header extends Component {
 									</a>
 								</li>
 								<li className="search">
-									<form target="_blank" action="/search" method="get">
+									<form
+										target="_blank"
+										rel="noopener noreferrer"
+										action="/search"
+										method="get"
+									>
 										<input name="utf8" type="hidden" value="✓" />
 										<input
 											type="text"
