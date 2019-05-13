@@ -1,4 +1,4 @@
-import { TOGGLE_MENU } from './headerActions';
+import * as headerActions from './headerActions';
 
 const defaultState = {
 	isMenuShow: false,
@@ -19,7 +19,7 @@ const toggleMenu = state => {
 
 export default (state = defaultState, action) => {
 	switch (action.type) {
-		case TOGGLE_MENU:
+		case headerActions.TOGGLE_MENU:
 			return toggleMenu(state, action);
 
 		default:

@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import navLogo from '../../image/nav-logo.png';
 import navBeta from '../../image/nav-beta.png';
-import { createToggleMenuAction } from './headerActions';
+import * as headerActions from './headerActions';
 
 const Header = props => {
 	const { menuClassName, handleClickOnNavbarButton } = props;
@@ -144,7 +144,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		handleClickOnNavbarButton() {
-			const action = createToggleMenuAction();
+			const action = headerActions.createToggleMenuAction();
 			dispatch(action);
 		}
 	};
