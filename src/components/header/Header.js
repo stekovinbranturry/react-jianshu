@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
-import navLogo from '../image/nav-logo.png';
-import navBeta from '../image/nav-beta.png';
-import { createToggleMenuAction } from '../store/action';
+import navLogo from '../../image/nav-logo.png';
+import navBeta from '../../image/nav-beta.png';
+import { createToggleMenuAction } from './headerActions';
 
 const Header = props => {
 	const { menuClassName, handleClickOnNavbarButton } = props;
@@ -136,8 +136,8 @@ const Header = props => {
 
 const mapStateToProps = state => {
 	return {
-		isMenuShow: state.isMenuShow,
-		menuClassName: state.menuClassName
+		isMenuShow: state.header.isMenuShow,
+		menuClassName: state.header.menuClassName
 	};
 };
 

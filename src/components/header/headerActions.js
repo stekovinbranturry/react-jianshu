@@ -1,8 +1,6 @@
 /*
  * action types
  */
-
-// Header
 export const [TOGGLE_MENU] = ['TOGGLE_MENU'];
 
 /*
