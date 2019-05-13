@@ -136,8 +136,7 @@ const Header = props => {
 
 const mapStateToProps = state => {
 	return {
-		isMenuShow: state.header.isMenuShow,
-		menuClassName: state.header.menuClassName
+		menuClassName: state.getIn(['header', 'menuClassName'])
 	};
 };
 

@@ -1,27 +1,26 @@
 import * as headerActions from './headerActions';
+import { fromJS } from 'immutable';
 
-const defaultState = {
-	isMenuShow: false,
+const defaultState = fromJS({
 	menuClassName: 'collapse navbar-collapse'
-};
+});
+
+let isMenuShow = false;
 
 const toggleMenu = state => {
-	const newState = { ...state };
-	if (newState.isMenuShow) {
-		newState.menuClassName = 'collapse navbar-collapse';
-		newState.isMenuShow = false;
+	if (isMenuShow) {
+		isMenuShow = false;
+		return state.set('menuClassName', 'collapse navbar-collapse');
 	} else {
-		newState.menuClassName = 'collapse navbar-collapse in';
-		newState.isMenuShow = true;
+		isMenuShow = true;
+		return state.set('menuClassName', 'collapse navbar-collapse in');
 	}
-	return newState;
 };
 
 export default (state = defaultState, action) => {
 	switch (action.type) {
 		case headerActions.TOGGLE_MENU:
-			return toggleMenu(state, action);
-
+			return toggleMenu(state);
 		default:
 			return state;
 	}
