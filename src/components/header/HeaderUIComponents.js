@@ -45,11 +45,11 @@ const HeaderUIComponents = props => {
 			<div id="navbar-search-tips">
 				<div className="search-trending">
 					<div className="search-trending-header clearfix">
-						<span>热门搜索</span>
-						<a onClick={handleChangeSearchTips}>
+						<span className="hot-search">热门搜索</span>
+						<span className="change-list" onClick={handleChangeSearchTips}>
 							<i className="iconfont ic-search-change" />
 							换一批
-						</a>
+						</span>
 					</div>
 					<ul className="search-trending-tag-wrap">
 						{searchTipsList.map((item, index) => {

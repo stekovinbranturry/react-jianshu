@@ -990,16 +990,16 @@ pre code {
   color: #969696;
 }
 
-.search-trending .search-trending-header a {
+.search-trending .search-trending-header .change-list {
   float: right;
   font-size: 13px;
   color: #969696;
   background-color: transparent;
-  border-width: 0;
+  border: 0;
   padding: 0;
 }
 
-.search-trending .search-trending-header a:hover {
+.search-trending .search-trending-header .change-list:hover {
   color: #2f2f2f;
 }
 
@@ -14417,6 +14417,8 @@ footer .icp img {
   display: inline-block;
   font-size: 14px;
   color: #969696;
+  background-color: transparent;
+  border: none;
 }
 
 .recommended-authors .title .page-change:hover {

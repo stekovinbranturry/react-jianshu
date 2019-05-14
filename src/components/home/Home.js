@@ -9,14 +9,14 @@ import Author from './homeComponents/Author';
 const Home = () => {
 	return (
 		<Fragment>
-			<div class="container index">
-				<div class="row">
-					<div class="col-xs-16 main">
+			<div className="container index">
+				<div className="row">
+					<div className="col-xs-16 main">
 						<Carousel />
 						<Topic />
 						<ArticleList />
 					</div>
-					<div class="col-xs-7 col-xs-offset-1 aside">
+					<div className="col-xs-7 col-xs-offset-1 aside">
 						<Board />
 						<Qrbox />
 						<Author />
