@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
-import footerSmrz from '../image/footer-smrz.png';
-import footerWxb from '../image/footer-wxb.png';
-import footerZggsrz from '../image/footer-zggsrz.png';
+import footerSmrz from '../../image/footer-smrz.png';
+import footerWxb from '../../image/footer-wxb.png';
+import footerZggsrz from '../../image/footer-zggsrz.png';
 
 const ExternalLinks = () => {
 	return (

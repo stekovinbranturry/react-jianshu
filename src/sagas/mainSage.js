@@ -4,8 +4,10 @@ import * as headerActions from '../components/header/headerActions';
 // worker Saga: will be fired on headerActions.GET_SEARCH_TIPS actions
 function* getSearchTips() {
 	const res = yield axios.get('/list.json');
-	const random = Math.round(Math.random() * 10);
-	const list = res.data.splice(random, random + 10);
+	const data = res.data;
+	const listGroup = Math.ceil(data.length / 10);
+	const random = Math.floor(Math.random() * listGroup);
+	const list = data.splice(random * 10, random * 10 + 10);
 	const action = headerActions.createChangeSearchTipsAction(list);
 	yield put(action);
 }
