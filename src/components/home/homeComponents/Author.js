@@ -38,9 +38,8 @@ class Author extends Component {
 								item.get('is_following_user')
 							];
 							return (
-								<li>
+								<li key={id}>
 									<a
-										key={id}
 										href={
 											'https://www.jianshu.com/u/' +
 											slug +

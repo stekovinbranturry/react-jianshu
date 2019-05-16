@@ -13,7 +13,7 @@ class ArticleList extends Component {
 			<div className="split-line">
 				<div id="list-container">
 					<ul className="note-list" infinite-scroll-url="/">
-						{articleList.map((item, index) => {
+						{articleList.map(item => {
 							const [
 								title,
 								desc,
@@ -39,7 +39,7 @@ class ArticleList extends Component {
 							];
 
 							return (
-								<li key={index} className="have-img">
+								<li key={Math.ceil(Math.random() * 1000)} className="have-img">
 									<a
 										className="wrap-img"
 										href={article_href}
@@ -88,9 +88,14 @@ class ArticleList extends Component {
 						})}
 					</ul>
 				</div>
-				<a data-page="3" href="/" className="load-more">
+				<button
+					className="load-more"
+					onClick={() => {
+						this.props.getMoreArticle();
+					}}
+				>
 					阅读更多
-				</a>
+				</button>
 			</div>
 		);
 	}
@@ -104,6 +109,10 @@ const mapDispatchToProps = dispactch => {
 	return {
 		getArticleList() {
 			const action = HomeActions.createGetArticleListAction();
+			dispactch(action);
+		},
+		getMoreArticle() {
+			const action = HomeActions.createGetMoreArticleAction();
 			dispactch(action);
 		}
 	};

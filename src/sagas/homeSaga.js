@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { put, takeEvery } from 'redux-saga/effects';
 import * as homeActions from '../components/home/homeActions';
-// worker Saga: will be fired on homeActions.GET_TOPIC_LIST actions
+
 function* getList(json, actionCreator) {
 	const res = yield axios.get(json);
 	const list = res.data;
@@ -29,14 +29,19 @@ function* getArticleList() {
 		homeActions.createLoadArticleListAction
 	);
 }
-/*
-  Starts getTopicList on each dispatched `homeActions.GET_TOPIC_LIST` action.
-  Allows concurrent fetches of user.
-*/
+
+function* getMoreArticle() {
+	yield getList(
+		'/data/more-article-list.json',
+		homeActions.createLoadMoreArticleAction
+	);
+}
+
 function* homeSaga() {
 	yield takeEvery(homeActions.GET_TOPIC_LIST, getTopicList);
 	yield takeEvery(homeActions.GET_AUTHOR_LIST, getAuthorList);
 	yield takeEvery(homeActions.GET_ARTICLE_LIST, getArticleList);
+	yield takeEvery(homeActions.GET_MORE_ARTICLE, getMoreArticle);
 }
 
 export default homeSaga;

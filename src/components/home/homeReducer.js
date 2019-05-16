@@ -19,6 +19,14 @@ const loadArticleList = (state, action) => {
 	return state.set('articleList', action.list);
 };
 
+const loadMoreArticle = (state, action) => {
+	console.log();
+	return state.set('articleList', [
+		...state.get('articleList'),
+		...action.list
+	]);
+};
+
 export default (state = defaultState, action) => {
 	switch (action.type) {
 		case homeActions.CHANGE_TOPIC_LIST:
@@ -27,6 +35,8 @@ export default (state = defaultState, action) => {
 			return changeAuthorList(state, action);
 		case homeActions.LOAD_ARTICLE_LIST:
 			return loadArticleList(state, action);
+		case homeActions.LOAD_MORE_ARTICLE:
+			return loadMoreArticle(state, action);
 		default:
 			return state;
 	}

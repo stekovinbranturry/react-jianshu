@@ -5,14 +5,18 @@ export const [
 	GET_AUTHOR_LIST,
 	CHANGE_AUTHOR_LIST,
 	GET_ARTICLE_LIST,
-	LOAD_ARTICLE_LIST
+	LOAD_ARTICLE_LIST,
+	GET_MORE_ARTICLE,
+	LOAD_MORE_ARTICLE
 ] = [
 	'GET_TOPIC_LIST',
 	'CHANGE_TOPIC_LIST',
 	'GET_AUTHOR_LIST',
 	'CHANGE_AUTHOR_LIST',
 	'GET_ARTICLE_LIST',
-	'LOAD_ARTICLE_LIST'
+	'LOAD_ARTICLE_LIST',
+	'GET_MORE_ARTICLE',
+	'LOAD_MORE_ARTICLE'
 ];
 
 export const createGetTopicListAction = () => ({
@@ -39,5 +43,14 @@ export const createGetArticleListAction = () => ({
 
 export const createLoadArticleListAction = list => ({
 	type: LOAD_ARTICLE_LIST,
+	list: fromJS(list)
+});
+
+export const createGetMoreArticleAction = () => ({
+	type: GET_MORE_ARTICLE
+});
+
+export const createLoadMoreArticleAction = list => ({
+	type: LOAD_MORE_ARTICLE,
 	list: fromJS(list)
 });
