@@ -4,7 +4,8 @@ import { fromJS } from 'immutable';
 const defaultState = fromJS({
 	topicList: [],
 	authorList: [],
-	articleList: []
+	articleList: [],
+	articleListPage: 1
 });
 
 const changeTopicList = (state, action) => {
@@ -20,11 +21,10 @@ const loadArticleList = (state, action) => {
 };
 
 const loadMoreArticle = (state, action) => {
-	console.log();
-	return state.set('articleList', [
-		...state.get('articleList'),
-		...action.list
-	]);
+	return state.merge({
+		articleList: [...state.get('articleList'), ...action.list],
+		articleListPage: action.page + 1
+	});
 };
 
 export default (state = defaultState, action) => {

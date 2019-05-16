@@ -46,11 +46,13 @@ export const createLoadArticleListAction = list => ({
 	list: fromJS(list)
 });
 
-export const createGetMoreArticleAction = () => ({
-	type: GET_MORE_ARTICLE
+export const createGetMoreArticleAction = page => ({
+	type: GET_MORE_ARTICLE,
+	page
 });
 
-export const createLoadMoreArticleAction = list => ({
+export const createLoadMoreArticleAction = (list, page) => ({
 	type: LOAD_MORE_ARTICLE,
-	list: fromJS(list)
+	list: fromJS(list),
+	page
 });

@@ -30,11 +30,11 @@ function* getArticleList() {
 	);
 }
 
-function* getMoreArticle() {
-	yield getList(
-		'/data/more-article-list.json',
-		homeActions.createLoadMoreArticleAction
-	);
+function* getMoreArticle({ page }) {
+	const res = yield axios.get(`/data/more-article-list.json?page=${page}`);
+	const list = res.data;
+	const action = homeActions.createLoadMoreArticleAction(list, page);
+	yield put(action);
 }
 
 function* homeSaga() {

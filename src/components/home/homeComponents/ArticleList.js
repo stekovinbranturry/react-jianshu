@@ -8,7 +8,7 @@ class ArticleList extends Component {
 	}
 
 	render() {
-		const { articleList } = this.props;
+		const { articleList, articleListPage } = this.props;
 		return (
 			<div className="split-line">
 				<div id="list-container">
@@ -91,7 +91,7 @@ class ArticleList extends Component {
 				<button
 					className="load-more"
 					onClick={() => {
-						this.props.getMoreArticle();
+						this.props.getMoreArticle(articleListPage);
 					}}
 				>
 					阅读更多
@@ -102,7 +102,8 @@ class ArticleList extends Component {
 }
 
 const mapStateToProps = state => ({
-	articleList: state.getIn(['home', 'articleList'])
+	articleList: state.getIn(['home', 'articleList']),
+	articleListPage: state.getIn(['home', 'articleListPage'])
 });
 
 const mapDispatchToProps = dispactch => {
@@ -111,8 +112,8 @@ const mapDispatchToProps = dispactch => {
 			const action = HomeActions.createGetArticleListAction();
 			dispactch(action);
 		},
-		getMoreArticle() {
-			const action = HomeActions.createGetMoreArticleAction();
+		getMoreArticle(articleListPage) {
+			const action = HomeActions.createGetMoreArticleAction(articleListPage);
 			dispactch(action);
 		}
 	};
