@@ -23,6 +23,12 @@ function* getAuthorList() {
 	);
 }
 
+function* getArticleList() {
+	yield getList(
+		'/data/article-list.json',
+		homeActions.createLoadArticleListAction
+	);
+}
 /*
   Starts getTopicList on each dispatched `homeActions.GET_TOPIC_LIST` action.
   Allows concurrent fetches of user.
@@ -30,6 +36,7 @@ function* getAuthorList() {
 function* homeSaga() {
 	yield takeEvery(homeActions.GET_TOPIC_LIST, getTopicList);
 	yield takeEvery(homeActions.GET_AUTHOR_LIST, getAuthorList);
+	yield takeEvery(homeActions.GET_ARTICLE_LIST, getArticleList);
 }
 
 export default homeSaga;
