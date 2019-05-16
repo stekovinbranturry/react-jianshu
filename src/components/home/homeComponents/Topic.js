@@ -11,16 +11,21 @@ class Topic extends Component {
 		return (
 			<div className="recommend-collection">
 				{topicList.map(item => {
+					const [title, href, src] = [
+						item.get('title'),
+						item.get('href'),
+						item.get('src')
+					];
 					return (
 						<a
-							key={item.get('title')}
+							key={title}
 							className="collection"
 							target="_blank"
 							rel="noopener noreferrer"
-							href={item.get('href')}
+							href={href}
 						>
-							<img src={item.get('src')} alt="64" />
-							<div className="name">{item.get('title')}</div>
+							<img src={src} alt="64" />
+							<div className="name">{title}</div>
 						</a>
 					);
 				})}
