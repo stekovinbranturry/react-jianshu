@@ -984,7 +984,7 @@ pre code {
   margin-bottom: 10px;
 }
 
-.search-trending .search-trending-header span {
+.search-trending .search-trending-header .hot-search {
   float: left;
   font-size: 14px;
   color: #969696;
@@ -1001,6 +1001,7 @@ pre code {
 
 .search-trending .search-trending-header .change-list:hover {
   color: #2f2f2f;
+  cursor: pointer;
 }
 
 .search-trending .search-trending-header i {

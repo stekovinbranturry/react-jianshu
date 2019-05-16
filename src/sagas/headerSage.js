@@ -3,7 +3,7 @@ import { put, takeEvery } from 'redux-saga/effects';
 import * as headerActions from '../components/header/headerActions';
 // worker Saga: will be fired on headerActions.GET_SEARCH_TIPS actions
 function* getSearchTips() {
-	const res = yield axios.get('/list.json');
+	const res = yield axios.get('/data/search-tips.json');
 	const data = res.data;
 	const listGroup = Math.ceil(data.length / 10);
 	const random = Math.floor(Math.random() * listGroup);
@@ -16,8 +16,8 @@ function* getSearchTips() {
   Starts getSearchTips on each dispatched `headerActions.GET_SEARCH_TIPS` action.
   Allows concurrent fetches of user.
 */
-function* mainSaga() {
+function* headerSaga() {
 	yield takeEvery(headerActions.GET_SEARCH_TIPS, getSearchTips);
 }
 
-export default mainSaga;
+export default headerSaga;
