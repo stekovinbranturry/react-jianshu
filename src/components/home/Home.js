@@ -5,6 +5,7 @@ import Topic from './homeComponents/Topic';
 import Board from './homeComponents/Board';
 import Qrbox from './homeComponents/Qrbox';
 import Author from './homeComponents/Author';
+import SideTool from './homeComponents/SideTool';
 
 const Home = () => {
 	return (
@@ -23,6 +24,7 @@ const Home = () => {
 					</div>
 				</div>
 			</div>
+			<SideTool />
 		</Fragment>
 	);
 };

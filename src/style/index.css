@@ -9778,9 +9778,23 @@ textarea:-ms-input-placeholder {
 
 .side-tool {
   position: fixed;
+  height: 50px;
+  width: 50px;
   bottom: 40px;
   right: 40px;
   z-index: 1040;
+  border: 1px solid #dcdcdc;
+  padding: 0 15px;
+  background: #fff;
+}
+
+.side-tool:hover {
+  cursor: pointer;
+}
+
+.side-tool > i {
+  line-height: 50px;
+  font-size: 20px;
 }
 
 .side-tool > ul {
