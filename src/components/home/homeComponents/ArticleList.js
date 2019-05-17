@@ -39,21 +39,11 @@ class ArticleList extends PureComponent {
 
 							return (
 								<li key={Math.ceil(Math.random() * 1000)} className="have-img">
-									<Link
-										className="wrap-img"
-										to="/article"
-										target="_blank"
-										rel="noopener noreferrer"
-									>
+									<Link className="wrap-img" to="/article">
 										<img className="img-blur-done" src={image_src} alt="img" />
 									</Link>
 									<div className="content">
-										<Link
-											className="title"
-											target="_blank"
-											rel="noopener noreferrer"
-											to="/article"
-										>
+										<Link className="title" to="/article">
 											{title}
 										</Link>
 										<p className="abstract">{desc}</p>

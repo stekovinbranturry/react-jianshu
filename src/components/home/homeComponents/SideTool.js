@@ -12,10 +12,6 @@ class SideTool extends PureComponent {
 		});
 	}
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll');
-	}
-
 	handleBackToTop = () => {
 		document.documentElement.scrollTop = 0;
 	};
