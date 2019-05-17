@@ -19,8 +19,7 @@ export const [
 	'LOAD_ARTICLE_LIST',
 	'GET_MORE_ARTICLE',
 	'LOAD_MORE_ARTICLE',
-	'SHOW_SIDETOOL',
-	'HIDE_SIDETOOL'
+	'SHOW_SIDETOOL'
 ];
 
 export const createGetTopicListAction = () => ({
@@ -61,10 +60,7 @@ export const createLoadMoreArticleAction = (list, page) => ({
 	page
 });
 
-export const createShowSidetoolAction = () => ({
-	type: SHOW_SIDETOOL
-});
-
-export const createHideSidetoolAction = () => ({
-	type: HIDE_SIDETOOL
+export const createShowSidetoolAction = value => ({
+	type: SHOW_SIDETOOL,
+	value
 });

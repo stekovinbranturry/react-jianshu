@@ -28,12 +28,8 @@ const loadMoreArticle = (state, action) => {
 	});
 };
 
-const showSidetool = state => {
-	return state.set('ifShowSidetool', true);
-};
-
-const hideSidetool = state => {
-	return state.set('ifShowSidetool', false);
+const showSidetool = (state, action) => {
+	return state.set('ifShowSidetool', action.value);
 };
 
 export default (state = defaultState, action) => {
@@ -47,9 +43,7 @@ export default (state = defaultState, action) => {
 		case homeActions.LOAD_MORE_ARTICLE:
 			return loadMoreArticle(state, action);
 		case homeActions.SHOW_SIDETOOL:
-			return showSidetool(state);
-		case homeActions.HIDE_SIDETOOL:
-			return hideSidetool(state);
+			return showSidetool(state, action);
 		default:
 			return state;
 	}

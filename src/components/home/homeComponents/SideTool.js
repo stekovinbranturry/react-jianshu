@@ -7,8 +7,8 @@ class SideTool extends Component {
 	componentDidMount() {
 		window.addEventListener('scroll', () => {
 			document.documentElement.scrollTop > 100
-				? this.props.showSidetool()
-				: this.props.hideSidetool();
+				? this.props.showSidetool(true)
+				: this.props.showSidetool(false);
 		});
 	}
 
@@ -42,12 +42,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => {
 	return {
-		showSidetool() {
-			const action = homeActions.createShowSidetoolAction();
-			dispatch(action);
-		},
-		hideSidetool() {
-			const action = homeActions.createHideSidetoolAction();
+		showSidetool(value) {
+			const action = homeActions.createShowSidetoolAction(value);
 			dispatch(action);
 		}
 	};
