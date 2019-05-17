@@ -5,7 +5,8 @@ const defaultState = fromJS({
 	topicList: [],
 	authorList: [],
 	articleList: [],
-	articleListPage: 1
+	articleListPage: 1,
+	ifShowSidetool: false
 });
 
 const changeTopicList = (state, action) => {
@@ -27,6 +28,14 @@ const loadMoreArticle = (state, action) => {
 	});
 };
 
+const showSidetool = state => {
+	return state.set('ifShowSidetool', true);
+};
+
+const hideSidetool = state => {
+	return state.set('ifShowSidetool', false);
+};
+
 export default (state = defaultState, action) => {
 	switch (action.type) {
 		case homeActions.CHANGE_TOPIC_LIST:
@@ -37,6 +46,10 @@ export default (state = defaultState, action) => {
 			return loadArticleList(state, action);
 		case homeActions.LOAD_MORE_ARTICLE:
 			return loadMoreArticle(state, action);
+		case homeActions.SHOW_SIDETOOL:
+			return showSidetool(state);
+		case homeActions.HIDE_SIDETOOL:
+			return hideSidetool(state);
 		default:
 			return state;
 	}

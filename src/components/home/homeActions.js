@@ -7,7 +7,9 @@ export const [
 	GET_ARTICLE_LIST,
 	LOAD_ARTICLE_LIST,
 	GET_MORE_ARTICLE,
-	LOAD_MORE_ARTICLE
+	LOAD_MORE_ARTICLE,
+	SHOW_SIDETOOL,
+	HIDE_SIDETOOL
 ] = [
 	'GET_TOPIC_LIST',
 	'CHANGE_TOPIC_LIST',
@@ -16,7 +18,9 @@ export const [
 	'GET_ARTICLE_LIST',
 	'LOAD_ARTICLE_LIST',
 	'GET_MORE_ARTICLE',
-	'LOAD_MORE_ARTICLE'
+	'LOAD_MORE_ARTICLE',
+	'SHOW_SIDETOOL',
+	'HIDE_SIDETOOL'
 ];
 
 export const createGetTopicListAction = () => ({
@@ -55,4 +59,12 @@ export const createLoadMoreArticleAction = (list, page) => ({
 	type: LOAD_MORE_ARTICLE,
 	list: fromJS(list),
 	page
+});
+
+export const createShowSidetoolAction = () => ({
+	type: SHOW_SIDETOOL
+});
+
+export const createHideSidetoolAction = () => ({
+	type: HIDE_SIDETOOL
 });
