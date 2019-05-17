@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as HomeActions from '../homeActions';
 
-class ArticleList extends Component {
+class ArticleList extends PureComponent {
 	componentDidMount() {
 		this.props.getArticleList();
 	}

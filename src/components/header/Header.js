@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as headerActions from './headerActions';
 import HeaderUIComponents from './HeaderUIComponents';
 
-class Header extends Component {
+class Header extends PureComponent {
 	componentDidMount() {
 		this.props.handleChangeSearchTips();
 	}

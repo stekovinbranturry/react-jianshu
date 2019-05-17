@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import ReactTooltip from 'react-tooltip';
 import * as homeActions from '../homeActions';
 
-class SideTool extends Component {
+class SideTool extends PureComponent {
 	componentDidMount() {
 		window.addEventListener('scroll', () => {
 			document.documentElement.scrollTop > 100
