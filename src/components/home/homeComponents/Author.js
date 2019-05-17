@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as HomeActions from '../homeActions';
 
-class Author extends Component {
+class Author extends PureComponent {
 	componentDidMount() {
 		this.props.getAuthorList();
 	}
 	render() {
-		const { authorList } = this.props;
+		const { authorList, updateAuthorList } = this.props;
 		return (
 			<div className="recommended-author-wrap">
 				<div className="recommended-authors">
 					<div className="title">
 						<span>推荐作者</span>
-						<button className="page-change">
+						<button className="page-change" onClick={updateAuthorList}>
 							<i className="iconfont ic-search-change" />
 							换一批
 						</button>
@@ -110,6 +110,10 @@ const mapDispatchToProps = dispactch => {
 	return {
 		getAuthorList() {
 			const action = HomeActions.createGetAuthorListAction();
+			dispactch(action);
+		},
+		updateAuthorList() {
+			const action = HomeActions.createUpdateAuthorListAction();
 			dispactch(action);
 		}
 	};

@@ -3,6 +3,7 @@ export const [
 	GET_TOPIC_LIST,
 	CHANGE_TOPIC_LIST,
 	GET_AUTHOR_LIST,
+	UPDATE_AUTHOR_LIST,
 	CHANGE_AUTHOR_LIST,
 	GET_ARTICLE_LIST,
 	LOAD_ARTICLE_LIST,
@@ -14,6 +15,7 @@ export const [
 	'GET_TOPIC_LIST',
 	'CHANGE_TOPIC_LIST',
 	'GET_AUTHOR_LIST',
+	'UPDATE_AUTHOR_LIST',
 	'CHANGE_AUTHOR_LIST',
 	'GET_ARTICLE_LIST',
 	'LOAD_ARTICLE_LIST',
@@ -33,6 +35,10 @@ export const createChangeTopicListAction = list => ({
 
 export const createGetAuthorListAction = () => ({
 	type: GET_AUTHOR_LIST
+});
+
+export const createUpdateAuthorListAction = () => ({
+	type: UPDATE_AUTHOR_LIST
 });
 
 export const createChangeAuthorListAction = list => ({

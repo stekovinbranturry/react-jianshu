@@ -23,6 +23,13 @@ function* getAuthorList() {
 	);
 }
 
+function* updateAuthorList() {
+	yield getList(
+		'/data/update-author-list.json',
+		homeActions.createChangeAuthorListAction
+	);
+}
+
 function* getArticleList() {
 	yield getList(
 		'/data/article-list.json',
@@ -40,6 +47,7 @@ function* getMoreArticle({ page }) {
 function* homeSaga() {
 	yield takeEvery(homeActions.GET_TOPIC_LIST, getTopicList);
 	yield takeEvery(homeActions.GET_AUTHOR_LIST, getAuthorList);
+	yield takeEvery(homeActions.UPDATE_AUTHOR_LIST, updateAuthorList);
 	yield takeEvery(homeActions.GET_ARTICLE_LIST, getArticleList);
 	yield takeEvery(homeActions.GET_MORE_ARTICLE, getMoreArticle);
 }
