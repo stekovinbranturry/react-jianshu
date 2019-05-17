@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import navLogo from '../../image/nav-logo.png';
 import navBeta from '../../image/nav-beta.png';
 
@@ -12,30 +13,30 @@ const HeaderUIComponents = props => {
 
 	const Logo = () => {
 		return (
-			<a className="logo" href="/">
+			<Link className="logo" to="/">
 				<img src={navLogo} alt="Nav logo" />
-			</a>
+			</Link>
 		);
 	};
 
 	const User = () => {
 		return (
 			<Fragment>
-				<a
+				<Link
 					className="btn write-btn"
 					target="_blank"
 					rel="noopener noreferrer"
-					href="/"
+					to="/"
 				>
 					<i className="iconfont ic-write" />
 					写文章
-				</a>
-				<a className="btn sign-up" id="sign_up" href="/">
+				</Link>
+				<Link className="btn sign-up" id="sign_up" to="/">
 					注册
-				</a>
-				<a className="btn log-in" id="sign_in" href="/">
+				</Link>
+				<Link className="btn log-in" id="sign_in" to="/">
 					登录
-				</a>
+				</Link>
 			</Fragment>
 		);
 	};
@@ -90,9 +91,9 @@ const HeaderUIComponents = props => {
 						placeholder="搜索"
 						className="search-input"
 					/>
-					<a className="search-btn" href="/">
+					<Link className="search-btn" to="/">
 						<i className="iconfont ic-search" />
-					</a>
+					</Link>
 					<SearchTips />
 				</form>
 			</li>
@@ -104,16 +105,16 @@ const HeaderUIComponents = props => {
 			<div className={menuClassName} id="menu">
 				<ul className="nav navbar-nav">
 					<li className="tab active">
-						<a href="/">
+						<Link to="/">
 							<span className="menu-text">首页</span>
 							<i className="iconfont ic-navigation-discover menu-icon" />
-						</a>
+						</Link>
 					</li>
 					<li className="tab ">
 						<a
 							id="web-nav-app-download-btn"
 							className="app-download-btn"
-							href="/apps?utm_medium=desktop&amp;utm_source=navbar-apps"
+							href="https://www.jianshu.com/apps?utm_medium=desktop&amp;utm_source=navbar-apps"
 						>
 							<span className="menu-text">下载App</span>
 							<i className="iconfont ic-navigation-download menu-icon" />
@@ -128,9 +129,9 @@ const HeaderUIComponents = props => {
 	const Beta = () => {
 		return (
 			<div className="beta">
-				<a href="/">
+				<Link to="/">
 					<img src={navBeta} alt="beta" />
-				</a>
+				</Link>
 			</div>
 		);
 	};

@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as HomeActions from '../homeActions';
 
@@ -17,7 +18,6 @@ class ArticleList extends PureComponent {
 							const [
 								title,
 								desc,
-								article_href,
 								image_src,
 								nickname,
 								author_href,
@@ -28,7 +28,6 @@ class ArticleList extends PureComponent {
 							] = [
 								item.get('title'),
 								item.get('desc'),
-								item.get('article_href'),
 								item.get('image_src'),
 								item.get('nickname'),
 								item.get('author_href'),
@@ -40,23 +39,23 @@ class ArticleList extends PureComponent {
 
 							return (
 								<li key={Math.ceil(Math.random() * 1000)} className="have-img">
-									<a
+									<Link
 										className="wrap-img"
-										href={article_href}
+										to="/article"
 										target="_blank"
 										rel="noopener noreferrer"
 									>
 										<img className="img-blur-done" src={image_src} alt="img" />
-									</a>
+									</Link>
 									<div className="content">
-										<a
+										<Link
 											className="title"
 											target="_blank"
 											rel="noopener noreferrer"
-											href={article_href}
+											to="/article"
 										>
 											{title}
-										</a>
+										</Link>
 										<p className="abstract">{desc}</p>
 										<div className="meta">
 											<span className="jsd-meta">
