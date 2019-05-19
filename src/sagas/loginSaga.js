@@ -5,7 +5,6 @@ import * as loginAction from '../components/login/loginActions';
 function* verifyUser() {
 	const res = yield axios.get('/data/user.json');
 	const data = res.data;
-	console.log(data);
 	const action = loginAction.createSignInAction(data);
 	yield put(action);
 }

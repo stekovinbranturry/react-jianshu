@@ -24,12 +24,7 @@ const HeaderUIComponents = props => {
 	const User = () => {
 		return (
 			<Fragment>
-				<Link
-					className="btn write-btn"
-					target="_blank"
-					rel="noopener noreferrer"
-					to="/login"
-				>
+				<Link className="btn write-btn" to="/writer">
 					<i className="iconfont ic-write" />
 					写文章
 				</Link>
