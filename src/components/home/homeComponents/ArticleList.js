@@ -16,6 +16,7 @@ class ArticleList extends PureComponent {
 					<ul className="note-list" infinite-scroll-url="/">
 						{articleList.map(item => {
 							const [
+								id,
 								title,
 								desc,
 								image_src,
@@ -26,6 +27,7 @@ class ArticleList extends PureComponent {
 								paid_count,
 								like_count
 							] = [
+								item.get('id'),
 								item.get('title'),
 								item.get('desc'),
 								item.get('image_src'),
@@ -39,11 +41,11 @@ class ArticleList extends PureComponent {
 
 							return (
 								<li key={Math.ceil(Math.random() * 1000)} className="have-img">
-									<Link className="wrap-img" to="/article">
+									<Link className="wrap-img" to={`/article/${id}`}>
 										<img className="img-blur-done" src={image_src} alt="img" />
 									</Link>
 									<div className="content">
-										<Link className="title" to="/article">
+										<Link className="title" to={`/article/${id}`}>
 											{title}
 										</Link>
 										<p className="abstract">{desc}</p>
