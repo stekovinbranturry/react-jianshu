@@ -6,6 +6,7 @@ import Home from './components/home/Home';
 import Article from './components/article/Article';
 import Footer from './components/footer/Footer';
 import SideTool from './components/home/homeComponents/SideTool';
+import Login from './components/login/Login';
 import store from './store/store';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
 				<Header />
 				<Route exact path="/" component={Home} />
 				<Route exact path="/article/:id" component={Article} />
+				<Route exact path="/login" component={Login} />
 				<SideTool />
 				<Footer />
 			</Router>

@@ -8,7 +8,9 @@ const HeaderUIComponents = props => {
 		menuClassName,
 		handleClickOnNavbarButton,
 		searchTipsList,
-		handleChangeSearchTips
+		handleChangeSearchTips,
+		isLogin,
+		handleSignOut
 	} = props;
 
 	const Logo = () => {
@@ -26,17 +28,23 @@ const HeaderUIComponents = props => {
 					className="btn write-btn"
 					target="_blank"
 					rel="noopener noreferrer"
-					to="/"
+					to="/login"
 				>
 					<i className="iconfont ic-write" />
 					写文章
 				</Link>
-				<Link className="btn sign-up" id="sign_up" to="/">
+				<Link className="btn sign-up" id="sign_up" to="/login">
 					注册
 				</Link>
-				<Link className="btn log-in" id="sign_in" to="/">
-					登录
-				</Link>
+				{isLogin ? (
+					<div className="btn log-out" id="sign_out" onClick={handleSignOut}>
+						退出
+					</div>
+				) : (
+					<Link className="btn log-in" id="sign_in" to="/login">
+						登录
+					</Link>
+				)}
 			</Fragment>
 		);
 	};

@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import * as headerActions from './headerActions';
+import * as loginActions from '../login/loginActions';
 import HeaderUIComponents from './HeaderUIComponents';
 
 class Header extends PureComponent {
@@ -13,7 +14,9 @@ class Header extends PureComponent {
 			menuClassName,
 			handleClickOnNavbarButton,
 			searchTipsList,
-			handleChangeSearchTips
+			handleChangeSearchTips,
+			isLogin,
+			handleSignOut
 		} = this.props;
 
 		return (
@@ -22,6 +25,8 @@ class Header extends PureComponent {
 				handleClickOnNavbarButton={handleClickOnNavbarButton}
 				searchTipsList={searchTipsList}
 				handleChangeSearchTips={handleChangeSearchTips}
+				isLogin={isLogin}
+				handleSignOut={handleSignOut}
 			/>
 		);
 	}
@@ -30,7 +35,8 @@ class Header extends PureComponent {
 const mapStateToProps = state => {
 	return {
 		menuClassName: state.getIn(['header', 'menuClassName']),
-		searchTipsList: state.getIn(['header', 'searchTipsList'])
+		searchTipsList: state.getIn(['header', 'searchTipsList']),
+		isLogin: state.getIn(['login', 'isLogin'])
 	};
 };
 
@@ -42,6 +48,10 @@ const mapDispatchToProps = dispatch => {
 		},
 		handleChangeSearchTips() {
 			const action = headerActions.createGetSearchTipsAction();
+			dispatch(action);
+		},
+		handleSignOut() {
+			const action = loginActions.createSignOutAction();
 			dispatch(action);
 		}
 	};
