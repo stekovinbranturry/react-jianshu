@@ -3,11 +3,11 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Header from './components/header/Header';
 import Home from './components/home/Home';
-import Article from './components/article/Article';
+import Article from './components/article/loadable';
 import Footer from './components/footer/Footer';
 import SideTool from './components/home/homeComponents/SideTool';
 import Login from './components/login/Login';
-import Writer from './components/writer/Writer';
+import Writer from './components/writer/loadable';
 import store from './store/store';
 
 const App = () => {

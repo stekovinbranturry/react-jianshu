@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class Writer extends PureComponent {
 	render() {
@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
 export default connect(
 	mapStateToProps,
 	null
-)(Writer);
+)(withRouter(Writer));
