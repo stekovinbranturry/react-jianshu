@@ -11,34 +11,34 @@ function* getList(json, actionCreator) {
 
 function* getTopicList() {
 	yield getList(
-		'/data/topic-list.json',
+		'/api/topic-list.json',
 		homeActions.createChangeTopicListAction
 	);
 }
 
 function* getAuthorList() {
 	yield getList(
-		'/data/author-list.json',
+		'/api/author-list.json',
 		homeActions.createChangeAuthorListAction
 	);
 }
 
 function* updateAuthorList() {
 	yield getList(
-		'/data/update-author-list.json',
+		'/api/update-author-list.json',
 		homeActions.createChangeAuthorListAction
 	);
 }
 
 function* getArticleList() {
 	yield getList(
-		'/data/article-list.json',
+		'/api/article-list.json',
 		homeActions.createLoadArticleListAction
 	);
 }
 
 function* getMoreArticle({ page }) {
-	const res = yield axios.get(`/data/more-article-list.json?page=${page}`);
+	const res = yield axios.get(`/api/more-article-list.json?page=${page}`);
 	const list = res.data;
 	const action = homeActions.createLoadMoreArticleAction(list, page);
 	yield put(action);
