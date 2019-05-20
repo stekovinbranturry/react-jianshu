@@ -1,12 +1,19 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as articleActions from './articleActions';
 
 class Article extends PureComponent {
+	static propTypes = {
+		getArticle: PropTypes.func,
+		articleDetails: PropTypes.object
+	};
+
 	componentDidMount() {
 		this.props.getArticle(this.props.match.params.id);
 	}
+
 	render() {
 		const article = this.props.articleDetails;
 		const [title, author, avatar, content] = [

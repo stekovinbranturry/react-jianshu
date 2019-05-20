@@ -1,9 +1,18 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import * as loginAction from './loginActions';
 
 class Login extends PureComponent {
+	static propTypes = {
+		username: PropTypes.any.isRequired,
+		password: PropTypes.any.isRequired,
+		handleChangeUsername: PropTypes.func,
+		handleChangePassword: PropTypes.func,
+		handleVerifyUser: PropTypes.func,
+		isLogin: PropTypes.bool
+	};
 	render() {
 		const {
 			username,

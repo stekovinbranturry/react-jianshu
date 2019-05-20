@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as HomeActions from '../homeActions';
+
 class Topic extends PureComponent {
+	static propTypes = {
+		topicList: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+		getTopicList: PropTypes.func
+	};
 	componentDidMount() {
 		this.props.getTopicList();
 	}

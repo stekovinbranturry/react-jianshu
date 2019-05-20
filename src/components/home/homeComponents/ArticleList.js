@@ -1,9 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as HomeActions from '../homeActions';
 
 class ArticleList extends PureComponent {
+	static propTypes = {
+		articleList: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+		articleListPage: PropTypes.number,
+		getArticleList: PropTypes.func,
+		getMoreArticle: PropTypes.func
+	};
+
 	componentDidMount() {
 		this.props.getArticleList();
 	}

@@ -1,11 +1,19 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as HomeActions from '../homeActions';
 
 class Author extends PureComponent {
+	static propTypes = {
+		authorList: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+		getAuthorList: PropTypes.func,
+		updateAuthorList: PropTypes.func
+	};
+
 	componentDidMount() {
 		this.props.getAuthorList();
 	}
+
 	render() {
 		const { authorList, updateAuthorList } = this.props;
 		return (

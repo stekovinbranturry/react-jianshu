@@ -1,8 +1,12 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { Redirect, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Writer extends PureComponent {
+	static propTypes = {
+		isLogin: PropTypes.bool
+	}
 	render() {
 		const { isLogin } = this.props;
 		if (isLogin) {

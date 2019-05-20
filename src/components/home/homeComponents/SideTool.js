@@ -1,9 +1,15 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 import * as homeActions from '../homeActions';
 
 class SideTool extends PureComponent {
+	static propTypes = {
+		ifShowSidetool: PropTypes.bool,
+		showSidetool: PropTypes.func
+	};
+
 	componentDidMount() {
 		window.addEventListener('scroll', () => {
 			document.documentElement.scrollTop > 100

@@ -1,10 +1,20 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import * as headerActions from './headerActions';
 import * as loginActions from '../login/loginActions';
 import HeaderUIComponents from './HeaderUIComponents';
 
 class Header extends PureComponent {
+	static propTypes = {
+		menuClassName: PropTypes.string,
+		handleClickOnNavbarButton: PropTypes.func,
+		searchTipsList: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+		handleChangeSearchTips: PropTypes.func,
+		isLogin: PropTypes.bool,
+		handleSignOut: PropTypes.func
+	};
+
 	componentDidMount() {
 		this.props.handleChangeSearchTips();
 	}
